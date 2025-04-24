@@ -44,3 +44,7 @@ bundle exec jekyll serve
 ## Deployment
 
 Il deployment viene gestito automaticamente tramite GitHub Actions quando viene effettuato un push sul branch main.
+
+## Stato del Progetto
+
+Questo progetto è in continuo sviluppo. Nuove funzionalità e miglioramenti verranno aggiunti regolarmente.
