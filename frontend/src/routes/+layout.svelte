@@ -9,7 +9,7 @@
       <ul class="nav-links">
         <li><a href="/">Home</a></li>
         <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li><a href="/blog/" data-sveltekit-reload>Blog</a></li>
         <li><a href="/apps">App Demo</a></li>
       </ul>
     </nav>
@@ -25,15 +25,15 @@
         <h3>Rocco Scavone</h3>
         <p>Sviluppatore Software</p>
       </div>
-      
+
       <ul class="footer-links">
         <li><a href="/">Home</a></li>
         <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/blog">Blog</a></li>
+        <li><a href="/blog/" data-sveltekit-reload>Blog</a></li>
         <li><a href="/apps">App Demo</a></li>
       </ul>
     </div>
-    
+
     <div class="copyright">
       <p>&copy; 2024 Rocco Scavone. Tutti i diritti riservati.</p>
     </div>
