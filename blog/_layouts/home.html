@@ -1,0 +1,55 @@
+---
+layout: default
+---
+<div class="home">
+  <div class="container">
+    <header class="page-header">
+      <h1 class="page-title">{{ page.title }}</h1>
+      {% if page.description %}
+        <p class="page-description">{{ page.description }}</p>
+      {% endif %}
+    </header>
+
+    <div class="post-list">
+      {% for post in paginator.posts %}
+        <article class="post-item">
+          <h2 class="post-title">
+            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h2>
+          <p class="post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%d %B %Y" }}
+            </time>
+            {% if post.categories.size > 0 %}
+              • 
+              <span class="post-categories">
+                {% for category in post.categories %}
+                  <a href="{{ site.baseurl }}/categories/{{ category | slugify }}/">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+                {% endfor %}
+              </span>
+            {% endif %}
+          </p>
+          <div class="post-excerpt">
+            {{ post.excerpt }}
+          </div>
+          <a href="{{ post.url | relative_url }}" class="read-more">Leggi l'articolo completo</a>
+        </article>
+      {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if paginator.total_pages > 1 %}
+      <div class="pagination">
+        {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">Precedente</a>
+        {% endif %}
+        
+        <span class="page-number">Pagina {{ paginator.page }} di {{ paginator.total_pages }}</span>
+        
+        {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | relative_url }}" class="next">Successiva</a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
