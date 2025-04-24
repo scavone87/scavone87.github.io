@@ -10,6 +10,7 @@ GEM
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
     ffi (1.17.2)
+    ffi (1.17.2-aarch64-linux-musl)
     forwardable-extended (2.6.0)
     http_parser.rb (0.8.0)
     i18n (1.14.7)
@@ -71,6 +72,7 @@ GEM
     webrick (1.9.1)
 
 PLATFORMS
+  aarch64-linux-musl
 
 DEPENDENCIES
   jekyll (~> 4.3)
