@@ -37,10 +37,18 @@ jobs:
       # Build blog
       - name: Build blog with Docker
         run: |
+          # Modifica temporaneamente il Dockerfile per usare jekyll build invece di jekyll serve
+          sed -i 's/CMD \["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0"\]/CMD \["bundle", "exec", "jekyll", "build"\]/' ./blog/Dockerfile
+
+          # Build e run del container
           docker build -t blog-build ./blog
           docker create --name blog-container blog-build
           docker start blog-container
-          docker exec blog-container bundle exec jekyll build
+
+          # Attendi che il container finisca di buildare il sito
+          docker wait blog-container
+
+          # Copia i file buildati
           mkdir -p _site/blog
           docker cp blog-container:/app/_site/. _site/blog/
           docker rm blog-container
