@@ -184,6 +184,7 @@
 
   footer {
     background-color: var(--secondary-dark);
+    background: linear-gradient(to right, var(--secondary-dark), var(--primary-dark));
     color: #ffffff;
     padding: 4rem 2rem 2rem;
     position: relative;
@@ -223,8 +224,9 @@
   }
 
   .footer-info p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 1.5rem;
+    font-weight: 500;
   }
 
   .social-links {
@@ -233,7 +235,7 @@
   }
 
   .social-links a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.95);
     transition: var(--transition);
     display: flex;
     align-items: center;
@@ -241,7 +243,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
   }
 
   .social-links a:hover {
@@ -254,6 +256,7 @@
     color: #ffffff;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
+    font-weight: 700;
   }
 
   .footer-links {
@@ -266,25 +269,27 @@
   }
 
   .footer-links a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.95);
     text-decoration: none;
     transition: var(--transition);
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .footer-links a:hover {
     color: #ffffff;
+    text-decoration: underline;
   }
 
   .copyright {
     text-align: center;
     margin-top: 3rem;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 500;
     max-width: var(--max-width);
     margin: 3rem auto 0;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   @media (max-width: 992px) {

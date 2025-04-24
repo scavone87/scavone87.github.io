@@ -1,31 +1,31 @@
 /* Base styles */
 :root {
   /* Colori principali - Light Mode */
-  --primary-color: #3b82f6;
-  --primary-light: #60a5fa;
-  --primary-dark: #2563eb;
-  --primary-rgb: 59, 130, 246;
+  --primary-color: #0056b3;
+  --primary-light: #2979c0;
+  --primary-dark: #004494;
+  --primary-rgb: 0, 86, 179;
 
-  --secondary-color: #4f46e5;
-  --secondary-light: #6366f1;
-  --secondary-dark: #4338ca;
-  --secondary-rgb: 79, 70, 229;
+  --secondary-color: #4527a0;
+  --secondary-light: #6247aa;
+  --secondary-dark: #371e86;
+  --secondary-rgb: 69, 39, 160;
 
-  --accent-color: #f97316;
-  --accent-light: #fb923c;
-  --accent-dark: #ea580c;
-  --accent-rgb: 249, 115, 22;
+  --accent-color: #d84315;
+  --accent-light: #e57373;
+  --accent-dark: #bf360c;
+  --accent-rgb: 216, 67, 21;
 
   /* Colori di sfondo e testo - Light Mode */
-  --background-color: #f8fafc;
+  --background-color: #f8f9fa;
   --surface-color: #ffffff;
-  --text-color: #1e293b;
-  --text-color-light: #64748b;
+  --text-color: #212529;
+  --text-color-light: #495057;
 
   /* Colori di utilità - Light Mode */
-  --light-gray: #e2e8f0;
-  --dark-gray: #64748b;
-  --border-color: #e2e8f0;
+  --light-gray: #e9ecef;
+  --dark-gray: #6c757d;
+  --border-color: #dee2e6;
   --hover-bg: rgba(0, 0, 0, 0.05);
 
   /* Dimensioni e stili */
@@ -43,28 +43,31 @@
 /* Dark Mode */
 .dark-mode {
   /* Colori principali - Dark Mode */
-  --primary-color: #60a5fa;
-  --primary-light: #93c5fd;
-  --primary-dark: #3b82f6;
+  --primary-color: #4dabff;
+  --primary-light: #82c0ff;
+  --primary-dark: #2196f3;
+  --primary-rgb: 77, 171, 255;
 
-  --secondary-color: #6366f1;
-  --secondary-light: #818cf8;
-  --secondary-dark: #4f46e5;
+  --secondary-color: #9575cd;
+  --secondary-light: #b39ddb;
+  --secondary-dark: #7e57c2;
+  --secondary-rgb: 149, 117, 205;
 
-  --accent-color: #fb923c;
-  --accent-light: #fdba74;
-  --accent-dark: #f97316;
+  --accent-color: #ff8a65;
+  --accent-light: #ffab91;
+  --accent-dark: #ff7043;
+  --accent-rgb: 255, 138, 101;
 
   /* Colori di sfondo e testo - Dark Mode */
-  --background-color: #0f172a;
-  --surface-color: #1e293b;
-  --text-color: #f1f5f9;
-  --text-color-light: #94a3b8;
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-color: #e9ecef;
+  --text-color-light: #adb5bd;
 
   /* Colori di utilità - Dark Mode */
-  --light-gray: #334155;
-  --dark-gray: #94a3b8;
-  --border-color: #334155;
+  --light-gray: #343a40;
+  --dark-gray: #ced4da;
+  --border-color: #343a40;
   --hover-bg: rgba(255, 255, 255, 0.05);
 
   /* Ombre - Dark Mode */
