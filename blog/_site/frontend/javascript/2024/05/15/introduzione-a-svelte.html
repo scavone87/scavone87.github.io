@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduzione a Svelte: Il Framework Reattivo che Rivoluziona il Frontend - Blog di Rocco Scavone</title>
+  <meta name="description" content="Svelte è un framework JavaScript che sta guadagnando rapidamente popolarità nel mondo dello sviluppo web. A differenza di framework come React o Vue, Svelte ...">
+  <link rel="stylesheet" href="/blog/assets/css/main.css">
+  <link rel="canonical" href="http://0.0.0.0:4000/blog/frontend/javascript/2024/05/15/introduzione-a-svelte.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/blog/feed.xml" title="Blog di Rocco Scavone" />
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Introduzione a Svelte: Il Framework Reattivo che Rivoluziona il Frontend | Blog di Rocco Scavone</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Introduzione a Svelte: Il Framework Reattivo che Rivoluziona il Frontend" />
+<meta name="author" content="Rocco Scavone" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Svelte è un framework JavaScript che sta guadagnando rapidamente popolarità nel mondo dello sviluppo web. A differenza di framework come React o Vue, Svelte sposta gran parte del lavoro dal browser al momento della compilazione, risultando in applicazioni più veloci e leggere. In questo articolo, esploreremo le caratteristiche principali di Svelte e vedremo perché potrebbe essere la scelta giusta per il tuo prossimo progetto." />
+<meta property="og:description" content="Svelte è un framework JavaScript che sta guadagnando rapidamente popolarità nel mondo dello sviluppo web. A differenza di framework come React o Vue, Svelte sposta gran parte del lavoro dal browser al momento della compilazione, risultando in applicazioni più veloci e leggere. In questo articolo, esploreremo le caratteristiche principali di Svelte e vedremo perché potrebbe essere la scelta giusta per il tuo prossimo progetto." />
+<link rel="canonical" href="http://0.0.0.0:4000/blog/frontend/javascript/2024/05/15/introduzione-a-svelte.html" />
+<meta property="og:url" content="http://0.0.0.0:4000/blog/frontend/javascript/2024/05/15/introduzione-a-svelte.html" />
+<meta property="og:site_name" content="Blog di Rocco Scavone" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2024-05-15T07:00:00+00:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Introduzione a Svelte: Il Framework Reattivo che Rivoluziona il Frontend" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Rocco Scavone"},"dateModified":"2024-05-15T07:00:00+00:00","datePublished":"2024-05-15T07:00:00+00:00","description":"Svelte è un framework JavaScript che sta guadagnando rapidamente popolarità nel mondo dello sviluppo web. A differenza di framework come React o Vue, Svelte sposta gran parte del lavoro dal browser al momento della compilazione, risultando in applicazioni più veloci e leggere. In questo articolo, esploreremo le caratteristiche principali di Svelte e vedremo perché potrebbe essere la scelta giusta per il tuo prossimo progetto.","headline":"Introduzione a Svelte: Il Framework Reattivo che Rivoluziona il Frontend","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/blog/frontend/javascript/2024/05/15/introduzione-a-svelte.html"},"url":"http://0.0.0.0:4000/blog/frontend/javascript/2024/05/15/introduzione-a-svelte.html"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <nav class="site-nav">
+        <a href="/" class="site-title">Rocco Scavone</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/blog" class="active">Blog</a></li>
+          <li><a href="/apps">App Demo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="site-content">
+    <article class="post">
+  <div class="container">
+    <header class="post-header">
+      <h1 class="post-title">Introduzione a Svelte: Il Framework Reattivo che Rivoluziona il Frontend</h1>
+      <p class="post-meta">
+        <time datetime="2024-05-15T07:00:00+00:00">
+          15 May 2024
+        </time>
+        
+          • <span>Rocco Scavone</span>
+        
+        
+          • 
+          <span class="post-categories">
+            
+              <a href="/blog/categories/frontend/">Frontend</a>, 
+            
+              <a href="/blog/categories/javascript/">JavaScript</a>
+            
+          </span>
+        
+      </p>
+    </header>
+
+    <div class="post-content">
+      <p>Svelte è un framework JavaScript che sta guadagnando rapidamente popolarità nel mondo dello sviluppo web. A differenza di framework come React o Vue, Svelte sposta gran parte del lavoro dal browser al momento della compilazione, risultando in applicazioni più veloci e leggere. In questo articolo, esploreremo le caratteristiche principali di Svelte e vedremo perché potrebbe essere la scelta giusta per il tuo prossimo progetto.</p>
+
+<h2 id="cosè-svelte">Cos’è Svelte?</h2>
+
+<p>Svelte è un approccio radicalmente nuovo alla costruzione di interfacce utente. Mentre framework tradizionali come React e Vue fanno gran parte del loro lavoro nel browser, Svelte sposta quel lavoro in una fase di compilazione che avviene quando costruisci la tua app.</p>
+
+<p>Invece di utilizzare tecniche come il Virtual DOM differing, Svelte scrive codice che aggiorna direttamente il DOM quando cambia lo stato della tua applicazione. Questo approccio porta a diversi vantaggi:</p>
+
+<ul>
+  <li><strong>Prestazioni migliori</strong>: Meno lavoro da fare nel browser significa applicazioni più veloci</li>
+  <li><strong>Bundle più piccoli</strong>: Nessuna necessità di includere un framework runtime</li>
+  <li><strong>Meno codice da scrivere</strong>: Meno boilerplate e una sintassi più intuitiva</li>
+</ul>
+
+<h2 id="caratteristiche-principali">Caratteristiche principali</h2>
+
+<h3 id="1-reattività-semplificata">1. Reattività semplificata</h3>
+
+<p>In Svelte, la reattività è integrata nel linguaggio. Non c’è bisogno di hook, metodi speciali o API per rendere i tuoi dati reattivi:</p>
+
+<pre><code class="language-svelte">&lt;script&gt;
+  let count = 0;
+  
+  function increment() {
+    count += 1;
+  }
+&lt;/script&gt;
+
+&lt;button on:click={increment}&gt;
+  Cliccato {count} {count === 1 ? 'volta' : 'volte'}
+&lt;/button&gt;
+</code></pre>
+
+<h3 id="2-componenti-in-un-unico-file">2. Componenti in un unico file</h3>
+
+<p>Svelte utilizza un formato di componente in un unico file (simile a Vue) che combina markup, stile e logica:</p>
+
+<pre><code class="language-svelte">&lt;script&gt;
+  // Logica del componente
+&lt;/script&gt;
+
+&lt;!-- Markup HTML --&gt;
+&lt;div&gt;Hello World&lt;/div&gt;
+
+&lt;style&gt;
+  /* Stili CSS scoped al componente */
+  div {
+    color: red;
+  }
+&lt;/style&gt;
+</code></pre>
+
+<h3 id="3-transizioni-e-animazioni">3. Transizioni e animazioni</h3>
+
+<p>Svelte offre un sistema di transizioni e animazioni integrato che rende semplice aggiungere movimento alle tue interfacce:</p>
+
+<pre><code class="language-svelte">&lt;script&gt;
+  import { fade } from 'svelte/transition';
+  let visible = true;
+&lt;/script&gt;
+
+&lt;button on:click={() =&gt; visible = !visible}&gt;
+  Toggle
+&lt;/button&gt;
+
+{#if visible}
+  &lt;p transition:fade&gt;
+    Appare e scompare con una transizione fluida
+  &lt;/p&gt;
+{/if}
+</code></pre>
+
+<h2 id="perché-scegliere-svelte">Perché scegliere Svelte?</h2>
+
+<h3 id="sviluppo-più-veloce">Sviluppo più veloce</h3>
+
+<p>La sintassi di Svelte è progettata per essere intuitiva e richiedere meno codice. Questo si traduce in uno sviluppo più rapido e in una base di codice più facile da mantenere.</p>
+
+<h3 id="prestazioni-eccellenti">Prestazioni eccellenti</h3>
+
+<p>Poiché Svelte compila il tuo codice in JavaScript vanilla ottimizzato, le applicazioni Svelte tendono ad essere più veloci e leggere rispetto a quelle costruite con altri framework.</p>
+
+<h3 id="curva-di-apprendimento-dolce">Curva di apprendimento dolce</h3>
+
+<p>Se conosci già HTML, CSS e JavaScript, imparare Svelte è relativamente semplice. La sua sintassi è progettata per sembrare un’estensione naturale di questi linguaggi.</p>
+
+<h2 id="conclusione">Conclusione</h2>
+
+<p>Svelte rappresenta un approccio innovativo allo sviluppo frontend che offre numerosi vantaggi in termini di prestazioni, dimensioni del bundle e produttività dello sviluppatore. Se stai cercando un framework moderno per il tuo prossimo progetto, Svelte merita sicuramente la tua attenzione.</p>
+
+<p>Nel prossimo articolo, vedremo come iniziare con Svelte creando una semplice applicazione e esplorando più a fondo le sue funzionalità. Restate sintonizzati!</p>
+
+    </div>
+
+    
+      <div class="post-tags">
+        <span>Tags:</span>
+        
+          <a href="/blog/tags/svelte/">#svelte</a>
+        
+          <a href="/blog/tags/javascript/">#javascript</a>
+        
+          <a href="/blog/tags/framework/">#framework</a>
+        
+          <a href="/blog/tags/web-development/">#web-development</a>
+        
+      </div>
+    
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <h3>Rocco Scavone</h3>
+          <p>Sviluppatore Software</p>
+        </div>
+        
+        <ul class="footer-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/portfolio">Portfolio</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/apps">App Demo</a></li>
+        </ul>
+      </div>
+      
+      <div class="copyright">
+        <p>&copy; 2025 Rocco Scavone. Tutti i diritti riservati.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

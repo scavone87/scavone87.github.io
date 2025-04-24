@@ -15,89 +15,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  # Build job for SvelteKit frontend
-  build-frontend:
+  # Build job using Docker
+  build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./frontend
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: './frontend/package-lock.json'
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
-
-      - name: Upload frontend artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: frontend-build
-          path: frontend/build
-          retention-days: 1
-
-  # Build job for Jekyll blog
-  build-blog:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./blog
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-          bundler-cache: true
-
-      - name: Install dependencies
+      # Build frontend
+      - name: Build frontend with Docker
         run: |
-          gem install bundler
-          bundle install
+          docker build -t frontend-build ./frontend
+          docker create --name frontend-container frontend-build
+          mkdir -p _site
+          docker cp frontend-container:/app/build/. _site/
+          docker rm frontend-container
 
-      - name: Build Jekyll site
-        run: bundle exec jekyll build
-
-      - name: Upload blog artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: blog-build
-          path: blog/_site
-          retention-days: 1
-
-  # Deploy job
-  deploy:
-    needs: [build-frontend, build-blog]
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Download frontend artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: frontend-build
-          path: _site
-
-      - name: Download blog artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: blog-build
-          path: _site/blog
+      # Build blog
+      - name: Build blog with Docker
+        run: |
+          docker build -t blog-build ./blog
+          docker create --name blog-container blog-build
+          docker start blog-container
+          docker exec blog-container bundle exec jekyll build
+          mkdir -p _site/blog
+          docker cp blog-container:/app/_site/. _site/blog/
+          docker rm blog-container
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -107,6 +53,14 @@ jobs:
         with:
           path: '_site'
 
+  # Deploy job
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
