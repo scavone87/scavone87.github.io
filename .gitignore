@@ -1,0 +1,31 @@
+# Jekyll generated files
+blog/_site/
+blog/.jekyll-cache/
+blog/.sass-cache/
+blog/.jekyll-metadata
+blog/vendor/
+
+# Node.js
+node_modules/
+
+# Build directories
+/build/
+/dist/
+/.svelte-kit/
+.output/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+!.env.test
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
