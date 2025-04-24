@@ -35,11 +35,8 @@
     <div class="grid">
       <!-- Progetto 1 -->
       <div class="card animate-scale delay-100">
-        <div class="card-img-container">
-          <img src="https://via.placeholder.com/600x400" alt="Progetto 1" class="card-img">
-          <span class="card-badge">Web App</span>
-        </div>
         <div class="card-content">
+          <div class="project-type">Web App</div>
           <h3>Sistema di Gestione Aziendale</h3>
           <p>Applicazione web per la gestione di risorse aziendali con dashboard interattiva e reportistica avanzata.</p>
           <div class="card-tags">
@@ -53,11 +50,8 @@
 
       <!-- Progetto 2 -->
       <div class="card animate-scale delay-200">
-        <div class="card-img-container">
-          <img src="https://via.placeholder.com/600x400" alt="Progetto 2" class="card-img">
-          <span class="card-badge">Mobile</span>
-        </div>
         <div class="card-content">
+          <div class="project-type">Mobile</div>
           <h3>App di Fitness Personalizzato</h3>
           <p>Applicazione mobile per il tracciamento dell'attività fisica con piani di allenamento personalizzati.</p>
           <div class="card-tags">
@@ -71,11 +65,8 @@
 
       <!-- Progetto 3 -->
       <div class="card animate-scale delay-300">
-        <div class="card-img-container">
-          <img src="https://via.placeholder.com/600x400" alt="Progetto 3" class="card-img">
-          <span class="card-badge">AI</span>
-        </div>
         <div class="card-content">
+          <div class="project-type">AI</div>
           <h3>Sistema di Analisi Predittiva</h3>
           <p>Soluzione basata su intelligenza artificiale per l'analisi predittiva di dati aziendali e supporto decisionale.</p>
           <div class="card-tags">
@@ -364,12 +355,6 @@
   }
 
   /* Cards and Sections */
-  .card-img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-  }
-
   .meta {
     color: var(--text-color-light);
     font-size: 0.9rem;
@@ -404,7 +389,7 @@
     font-weight: 600;
   }
 
-  .post-category {
+  .post-category, .project-type {
     display: inline-block;
     background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     color: white;
