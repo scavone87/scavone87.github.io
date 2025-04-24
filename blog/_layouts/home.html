@@ -3,8 +3,8 @@ layout: default
 ---
 <div class="home">
   <div class="container">
-    <header class="page-header">
-      <h1 class="page-title">{{ page.title }}</h1>
+    <header class="page-header animate-fade-in">
+      <h1 class="page-title"><span class="highlight">{{ page.title }}</span></h1>
       {% if page.description %}
         <p class="page-description">{{ page.description }}</p>
       {% endif %}
@@ -12,27 +12,48 @@ layout: default
 
     <div class="post-list">
       {% for post in paginator.posts %}
-        <article class="post-item">
+        <article class="post-item animate-fade-in" style="animation-delay: {{ forloop.index | times: 0.1 }}s">
           <h2 class="post-title">
             <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
           </h2>
-          <p class="post-meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}">
-              {{ post.date | date: "%d %B %Y" }}
-            </time>
+          <div class="post-meta">
+            <span class="date">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="16" y1="2" x2="16" y2="6"></line>
+                <line x1="8" y1="2" x2="8" y2="6"></line>
+                <line x1="3" y1="10" x2="21" y2="10"></line>
+              </svg>
+              <time datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%d %B %Y" }}
+              </time>
+            </span>
             {% if post.categories.size > 0 %}
-              • 
-              <span class="post-categories">
-                {% for category in post.categories %}
-                  <a href="{{ site.baseurl }}/categories/{{ category | slugify }}/">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-                {% endfor %}
+              <span class="category">
+                {{ post.categories[0] }}
               </span>
             {% endif %}
-          </p>
+          </div>
+
+          {% if post.tags.size > 0 %}
+            <div class="post-tags">
+              {% for tag in post.tags limit:3 %}
+                <a href="{{ site.baseurl }}/tags/{{ tag | slugify }}/" class="post-tag">{{ tag }}</a>
+              {% endfor %}
+            </div>
+          {% endif %}
+
           <div class="post-excerpt">
             {{ post.excerpt }}
           </div>
-          <a href="{{ post.url | relative_url }}" class="read-more">Leggi l'articolo completo</a>
+
+          <a href="{{ post.url | relative_url }}" class="read-more">
+            Leggi l'articolo completo
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
         </article>
       {% endfor %}
     </div>
@@ -41,13 +62,29 @@ layout: default
     {% if paginator.total_pages > 1 %}
       <div class="pagination">
         {% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path | relative_url }}" class="previous">Precedente</a>
+          <a href="{{ paginator.previous_page_path | relative_url }}" class="prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </a>
         {% endif %}
-        
-        <span class="page-number">Pagina {{ paginator.page }} di {{ paginator.total_pages }}</span>
-        
+
+        {% for page in (1..paginator.total_pages) %}
+          {% if page == paginator.page %}
+            <span class="current">{{ page }}</span>
+          {% elsif page == 1 %}
+            <a href="{{ '/' | relative_url }}">{{ page }}</a>
+          {% else %}
+            <a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+          {% endif %}
+        {% endfor %}
+
         {% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path | relative_url }}" class="next">Successiva</a>
+          <a href="{{ paginator.next_page_path | relative_url }}" class="next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </a>
         {% endif %}
       </div>
     {% endif %}
