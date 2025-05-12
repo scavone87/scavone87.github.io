@@ -1,5 +1,5 @@
 # Fase di build
-FROM node:18-alpine AS build
+FROM node:slim AS build
 
 WORKDIR /app
 
@@ -20,7 +20,7 @@ COPY static/ ./static/
 RUN npm run build
 
 # Fase di produzione
-FROM node:18-alpine
+FROM node:slim
 
 WORKDIR /app
 

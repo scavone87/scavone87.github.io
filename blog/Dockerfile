@@ -1,4 +1,4 @@
-FROM ruby:3.2-alpine
+FROM ruby:3.4-alpine
 
 # Installa le dipendenze necessarie per Jekyll
 RUN apk add --no-cache build-base gcc cmake git
