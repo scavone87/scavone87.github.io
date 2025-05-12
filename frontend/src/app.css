@@ -27,6 +27,13 @@
   --dark-gray: #6c757d;
   --border-color: #dee2e6;
   --hover-bg: rgba(0, 0, 0, 0.05);
+  --card-bg: #ffffff;
+  --input-bg: #ffffff;
+  --input-text: #212529;
+  --input-placeholder: #6c757d;
+  --input-border: #dee2e6;
+  --input-focus-border: #0056b3;
+  --input-focus-shadow: rgba(0, 86, 179, 0.25);
 
   /* Dimensioni e stili */
   --max-width: 1200px;
@@ -69,6 +76,13 @@
   --dark-gray: #ced4da;
   --border-color: #343a40;
   --hover-bg: rgba(255, 255, 255, 0.05);
+  --card-bg: #2d2d2d;
+  --input-bg: #2a2a2a;
+  --input-text: #e9ecef;
+  --input-placeholder: #adb5bd;
+  --input-border: #444;
+  --input-focus-border: #4dabff;
+  --input-focus-shadow: rgba(77, 171, 255, 0.25);
 
   /* Ombre - Dark Mode */
   --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
@@ -447,7 +461,7 @@ section {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
+  color: transparent;
   display: inline-block;
 }
 

@@ -157,14 +157,14 @@
   .calculator {
     max-width: 300px;
     margin: 0 auto;
-    background-color: #f5f5f5;
+    background-color: var(--card-bg);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--box-shadow);
     overflow: hidden;
   }
   
   .calculator-display {
-    background-color: #333;
+    background-color: var(--primary-dark);
     color: white;
     text-align: right;
     padding: 20px;
@@ -176,11 +176,12 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1px;
-    background-color: #ddd;
+    background-color: var(--border-color);
   }
   
   .calculator-key {
-    background-color: white;
+    background-color: var(--surface-color);
+    color: var(--text-color);
     border: none;
     padding: 20px;
     font-size: 18px;
@@ -189,11 +190,12 @@
   }
   
   .calculator-key:hover {
-    background-color: #f0f0f0;
+    background-color: var(--hover-bg);
   }
   
   .key-operator {
-    background-color: #f8f8f8;
+    background-color: var(--light-gray);
+    color: var(--text-color);
   }
   
   .key-equal {
@@ -208,19 +210,19 @@
   }
   
   .key-clear {
-    background-color: #ff6b6b;
+    background-color: var(--accent-color);
     color: white;
   }
   
   .key-clear:hover {
-    background-color: #ff5252;
+    background-color: var(--accent-dark);
   }
   
   .app-description {
     max-width: 600px;
     margin: 2rem auto;
     padding: 1rem;
-    background-color: #f8f8f8;
+    background-color: var(--light-gray);
     border-radius: 8px;
   }
   

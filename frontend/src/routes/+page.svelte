@@ -13,7 +13,8 @@
     <h1 class="animate-fade-in">Benvenuto nel mio <span class="highlight">Spazio Digitale</span></h1>
     <p class="animate-fade-in delay-200">Sviluppatore software, appassionato di tecnologia e condivisione delle conoscenze</p>
     <div class="hero-buttons animate-fade-in delay-400">
-      <a href="/portfolio" class="btn">Esplora i Progetti</a>
+      <!-- Link disabilitato fino a completamento della sezione -->
+      <!-- <a href="/portfolio" class="btn">Esplora i Progetti</a> -->
       <a href="#contact" class="btn btn-outline">Contattami</a>
     </div>
   </div>
@@ -106,7 +107,8 @@
             <span class="tag">Web</span>
             <span class="tag">Performance</span>
           </div>
-          <a href="/blog/architetture-moderne-web" data-sveltekit-reload class="btn btn-outline">Leggi l'articolo</a>
+          <!-- Link disabilitato fino all'integrazione del blog -->
+          <span class="btn btn-outline disabled">Prossimamente</span>
         </div>
       </div>
 
@@ -122,7 +124,8 @@
             <span class="tag">Performance</span>
             <span class="tag">JavaScript</span>
           </div>
-          <a href="/blog/ottimizzazione-react" data-sveltekit-reload class="btn btn-outline">Leggi l'articolo</a>
+          <!-- Link disabilitato fino all'integrazione del blog -->
+          <span class="btn btn-outline disabled">Prossimamente</span>
         </div>
       </div>
 
@@ -144,7 +147,7 @@
     </div>
 
     <div class="view-all animate-fade-in">
-      <a href="/blog/" data-sveltekit-reload class="btn btn-accent">Vedi tutti gli articoli</a>
+      <a href="/blog/" data-sveltekit-reload class="btn btn-accent disabled">Vedi tutti gli articoli</a>
     </div>
   </div>
 </section>
